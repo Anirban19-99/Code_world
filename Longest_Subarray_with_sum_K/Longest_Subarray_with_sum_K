@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    int n=a.size();
+    int i,j;
+    long long max_len=0;
+    long long sum=0;
+    int len=0;
+   /* map<long long, int> summap;
+
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+a[i];
+        if(sum==k)
+        {
+            len=i+1;
+            if(len>max_len)
+                max_len=len;
+        }
+        long long rem=sum-k;
+
+        if (summap.find(rem) != summap.end())
+        {
+            len=i-summap[rem];
+            if(len>max_len)
+                max_len=len;
+        }
+        if(summap.find(sum)==summap.end())
+            summap[sum]=i;
+    }
+    
+    return max_len;
+    */
+
+    long left=0,right=0;
+
+    while(right<n)
+    {
+        sum=sum+a[right];
+      
+        
+        if(sum<k)
+        {
+            
+        }
+        while(sum>k && left<right)
+        {
+            sum=sum-a[left];
+            left++;
+        }
+
+        if(sum==k)
+        {
+            int len=right-left+1;
+            if (len>max_len)
+                max_len=len;
+
+            
+        }
+        right++;
+    }
+    return max_len;
+    
+}
