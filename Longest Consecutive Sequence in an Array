@@ -1,0 +1,47 @@
+//https://takeuforward.org/data-structure/longest-consecutive-sequence-in-an-array/
+
+#include <bits/stdc++.h>
+int longestSuccessiveElements(vector<int>&a) {
+
+    sort(a.begin(),a.end());
+    int n=a.size();
+    int start=-1;
+    int end=-1;
+    int count=1;
+    int i=0;
+    int final_count=0;
+    int max_count=0;
+    int element=-1;
+
+     vector<int> ans;
+
+     for(int i=0;i<n;i++)
+     {
+         if(a[i]!=a[i+1])
+            ans.push_back(a[i]);
+
+     }
+
+    for(int i=0;i<ans.size();i++)
+    {
+     
+        if((ans[i]+1)==ans[i+1])
+        {
+            count++;
+            if(count>max_count)
+                max_count=count;
+        }
+        else
+        {
+            max_count=count;
+            count=1;
+            i++;         
+        }
+
+        if(max_count>=final_count)
+            final_count=max_count;
+    }
+    
+    return final_count;
+    
+}
