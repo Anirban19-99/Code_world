@@ -7,9 +7,11 @@ public:
         {
             for(j=i;j<n;j++)
             {
-                int temp=a[i][j];
-                a[i][j]=a[j][i];
-                a[j][i]=temp;
+                // int temp=a[i][j];
+                // a[i][j]=a[j][i];
+                // a[j][i]=temp;
+
+                swap(a[i][j],a[j][i]);
             }
         }
 
