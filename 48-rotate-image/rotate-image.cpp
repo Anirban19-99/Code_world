@@ -15,17 +15,17 @@ public:
 
         for(i=0;i<n;i++)
         {
-            //reverse(a[i].begin(),a[i].end());
+            reverse(a[i].begin(),a[i].end());
 
-            int u=0,v=n-1;
-            while(u<v)
-            {
-                int temp=a[i][v];
-                a[i][v]=a[i][u];
-                a[i][u]=temp; 
-                 u++;
-                v--;
-            }
+            // int u=0,v=n-1;
+            // while(u<v)
+            // {
+            //     int temp=a[i][v];
+            //     a[i][v]=a[i][u];
+            //     a[i][u]=temp; 
+            //      u++;
+            //     v--;
+            // }
            
 
 
