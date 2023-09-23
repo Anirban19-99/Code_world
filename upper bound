@@ -1,0 +1,33 @@
+int find_upper_bound(vector<int>,int, int,int,int);
+int upperBound(vector<int> &arr, int x, int n){
+	int start=0;
+	int end=n-1;
+	int target=x;
+	int index=n;
+	int k=find_upper_bound(arr,start,end,target,index);
+	return k;	
+}
+
+int find_upper_bound(vector<int> a,int start, int end, int target,int index)
+{
+  
+  
+  if(start<=end)
+  {
+      int mid=(start+end)/2;
+     
+      if(a[mid]>target)
+      {
+          index=mid;
+          return find_upper_bound(a,start,mid-1,target,index);
+      }
+      else if(a[mid]<=target)
+      {
+          return find_upper_bound(a,mid+1,end,target,index);
+      }
+  }
+  else
+        return index;
+
+  
+}
