@@ -1,0 +1,35 @@
+pair<int, int> getFloorAndCeil(int a[], int n, int x) {
+	int start=0;
+    int end=n-1;
+    int mid;
+	int target=x;
+    int floor_value=-1;
+    int cel_value=-1;
+	sort(a,a+n);
+
+	while(start<=end)
+    {
+         mid=(start+end)/2;
+        
+        if(a[mid]==target)
+        {
+            floor_value=a[mid];
+            cel_value=a[mid];
+            break;
+        }
+        if(a[mid]>target)
+        {
+            cel_value=a[mid];
+            end=mid-1;
+        }
+        else
+        {
+            floor_value=a[mid];
+            start=mid+1;
+        }
+    }
+
+	return make_pair(floor_value, cel_value);
+
+
+}
