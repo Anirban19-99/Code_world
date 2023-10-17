@@ -16,10 +16,17 @@ public:
             return true;
         }
 
-         if (a[start] == a[mid] && a[mid] == a[end]) {
-            start=start+1;
-            end=end-1;
-            continue;
+        
+        
+        while(a[start] == a[mid] && a[mid] == a[end]) {
+            if((start>=0 && start<n-1) && (end>0 && end<=n-1))
+            {
+                start=start+1;
+                end=end-1;
+            }
+            else
+                break;
+           // continue;
         }
 
 
