@@ -3,7 +3,8 @@ public:
     string restoreString(string s, vector<int>& a) {
 
     int n=s.length();
-    char ans[n];
+    //char ans[n];
+    string ans;
 
     for(int i=0;i<n;i++)
     {
@@ -12,17 +13,17 @@ public:
        {
            j++;
        }
-       if(j<n)
-        ans[i]=s[j];
+       ans.push_back(s[j]);
+       
     }
 
-    for(int i=0;i<n;i++)
-    {
-        s[i]=ans[i];
-    }
+    // for(int i=0;i<n;i++)
+    // {
+    //     s[i]=ans[i];
+    // }
 
 
-    return s;
+    return ans;
         
     }
 };
