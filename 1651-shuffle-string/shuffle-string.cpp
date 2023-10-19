@@ -1,29 +1,22 @@
+#include <algorithm>
 class Solution {
 public:
     string restoreString(string s, vector<int>& a) {
-
-    int n=s.length();
-    //char ans[n];
-    string ans;
+    int n=a.size();
+    char an[n];
 
     for(int i=0;i<n;i++)
     {
-       int j=0;
-       while(a[j]!=i && j<n)
-       {
-           j++;
-       }
-       ans.push_back(s[j]);
-       
+        an[a[i]]=s[i];
     }
 
-    // for(int i=0;i<n;i++)
-    // {
-    //     s[i]=ans[i];
-    // }
-
-
-    return ans;
+    for(int i=0;i<n;i++)
+    {
+        s[i]=an[i];
+    }
+     return s;
         
     }
+
+   
 };
