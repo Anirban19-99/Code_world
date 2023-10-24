@@ -12,20 +12,12 @@ public:
             {
                 if(s[i]==s[j])
                 {
-                    if(t[i]==t[j])
-                    {
-
-                    }
-                    else
+                    if(t[i]!=t[j])
                         return false;
                 }
                 else
                 {
-                    if(t[i]!=t[j])
-                    {
-
-                    }
-                    else
+                    if(t[i]==t[j])
                         return false;
                 }
             }
