@@ -18,11 +18,6 @@ class Solution {
         ListNode temp=head;
         int length=0;
         int mid;
-        while(temp!=null)
-        {
-            length++;
-            temp=temp.next;
-        }
         temp=head;
         if(length==2)
         {
