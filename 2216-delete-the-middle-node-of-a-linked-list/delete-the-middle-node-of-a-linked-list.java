@@ -32,19 +32,21 @@ class Solution {
 
         ListNode slow=head;
         ListNode fast=head;
+        temp=head;
         while(fast!=null)
         {
             fast=fast.next;
             if(fast!=null){
                 fast=fast.next;
+                temp=slow;
                 slow=slow.next;
             }
         }
-        temp=head;
-        while(temp.next!=slow)
-        {
-            temp=temp.next;
-        }
+        
+        // while(temp.next!=slow)
+        // {
+        //     temp=temp.next;
+        // }
         temp.next=slow.next;
         
 
