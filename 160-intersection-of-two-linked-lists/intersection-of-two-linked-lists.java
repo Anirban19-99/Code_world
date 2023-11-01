@@ -14,24 +14,28 @@ public class Solution {
 
         ListNode tempa=headA;
         ListNode tempb=headB;
-        if(tempa==tempb)
-            return tempa;
         Map<ListNode,Integer> map=new HashMap<>();
 
-        while(tempa!=null )
+        while(tempa!=null || tempb!=null)
         {
-            map.put(tempa,1);
-            tempa=tempa.next;
-        }
-        while(tempb!=null )
-        {
-           if(map.containsKey(tempb))
+            if(tempa==tempb)
+                return tempa;
+            if(map.containsKey(tempa))
+                return tempa;
+            else if(map.containsKey(tempb))
                 return tempb;
-            tempb=tempb.next;
+            else
+                {
+                    if(tempa!=null)
+                        map.put(tempa,1);
+                    if(tempb!=null)
+                        map.put(tempb,1);
+                }
+            if(tempa!=null)
+                tempa=tempa.next;
+            if(tempb!=null)
+                tempb=tempb.next;
         }
-
-        
-
 
         return null;
         
