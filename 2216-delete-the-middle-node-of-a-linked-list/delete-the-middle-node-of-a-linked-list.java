@@ -23,36 +23,29 @@ class Solution {
             length++;
             temp=temp.next;
         }
+        temp=head;
         if(length==2)
         {
             head.next=null;
             return head;
         }
-        System.out.println(length);
-        if(length%2==0)
+
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null)
         {
-            temp=head;
-            mid=(length/2)+1;
-            for(int i=1;i<mid-1;i++)
-            {
-                 temp=temp.next;
+            fast=fast.next;
+            if(fast!=null){
+                fast=fast.next;
+                slow=slow.next;
             }
-            ListNode temp1=temp.next;
-            temp.next=temp1.next;
         }
-        else
+        temp=head;
+        while(temp.next!=slow)
         {
-             temp=head;
-             mid=(length/2);
-             for(int i=1;i<mid;i++)
-             {
-                 temp=temp.next;
-             }
-             ListNode temp1=temp.next;
-             temp.next=temp1.next;
+            temp=temp.next;
         }
-        
-        
+        temp.next=slow.next;
         
 
         return head;
