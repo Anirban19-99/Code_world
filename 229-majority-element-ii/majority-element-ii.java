@@ -33,7 +33,8 @@ class Solution {
             }
 
         }
-         List<Integer>ans = new ArrayList<>();
+        ArrayList<Integer>ans = new ArrayList<>();
+        //int[] ans;
         if(count2==0)
         {
             int count=0;
