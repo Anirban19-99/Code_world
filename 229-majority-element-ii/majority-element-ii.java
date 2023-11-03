@@ -34,43 +34,43 @@ class Solution {
 
         }
          List<Integer>ans = new ArrayList<>();
-        // if(coun2==0)
-        // {
-        //     int count=0;
-        //     for(i=0;i<n;i++)
-        //     {
-        //         if(a[i]==el1)
-        //         {
-        //             count++;
-        //         }
-        //     }
+        if(count2==0)
+        {
+            int count=0;
+            for(i=0;i<n;i++)
+            {
+                if(a[i]==el1)
+                {
+                    count++;
+                }
+            }
 
-        //     if(count>(n/3))
-        //     {
-        //         ans.add(el1);
-        //         return ans;
-        //     }
+            if(count>(n/3))
+            {
+                ans.add(el1);
+                return ans;
+            }
 
-        // }
-        // else if(coun1==0)
-        // {
-        //     int count=0;
-        //     for(i=0;i<n;i++)
-        //     {
-        //         if(a[i]==el2)
-        //         {
-        //             count++;
-        //         }
-        //     }
+        }
+        else if(count1==0)
+        {
+            int count=0;
+            for(i=0;i<n;i++)
+            {
+                if(a[i]==el2)
+                {
+                    count++;
+                }
+            }
 
-        //     if(count>(n/3))
-        //     {
-        //         ans.add(el2);
-        //         return ans;
-        //     }
-        // }
-        //else
-        //{
+            if(count>(n/3))
+            {
+                ans.add(el2);
+                return ans;
+            }
+        }
+        else
+        {
             int cnt1=0;
             int cnt2=0;
             for(i=0;i<n;i++)
@@ -96,7 +96,9 @@ class Solution {
 
             return ans;
 
-       // }
+        }
+
+        return ans;
         
     }
 }
