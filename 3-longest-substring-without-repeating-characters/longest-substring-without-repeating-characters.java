@@ -25,8 +25,8 @@ class Solution {
                if(start1>start)
                     start=start1;
 
-               map.remove(s.charAt(i));
-               i--;
+               map.put(s.charAt(i),i);
+              // i--;
 
             }
             else
