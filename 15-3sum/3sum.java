@@ -26,11 +26,13 @@ class Solution {
                     List<Integer> temp=new ArrayList<>();
                     Collections.addAll(temp,a[i],a[j],a[k]);
                     ans.add(temp);
-                    j++;
-                    k--;
+                    // j++;
+                    // k--;
                     //skip the duplicates:
-                    while (j < k && a[j] == a[j - 1]) j++;
-                    while (j < k && a[k] == a[k + 1]) k--;
+                    while (j < k && (j<n) && a[j] == a[j + 1]) j++;
+                    j++;
+                    while (j < k && (k>0) && a[k] == a[k - 1]) k--;
+                    k--;
                 }
                
             }
