@@ -40,7 +40,6 @@ class Solution {
                 temp4=temp3;
                 temp3.next=temp1;
                 temp3=temp3.next;
-               // System.out.print(temp1.val);
                 temp1=temp1.next;
                 
             }
