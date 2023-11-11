@@ -4,6 +4,8 @@ class Solution {
         int i=0;
         int count=1;
         int n=a.length;
+        if(n<=2)
+            return n;
         ans.add(a[0]);
         for(i=1;i<n;i++)
         {
