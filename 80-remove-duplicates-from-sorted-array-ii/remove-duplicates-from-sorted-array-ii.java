@@ -19,12 +19,17 @@ class Solution {
                 }
                 else
                 {
-                    if(a[i]==a[i-1]);
-                    else
+                    while(i<n && a[i]==a[i-1])
                     {
-                        count=1;
-                        ans.add(a[i]);
+                        i++;
                     }
+                    count=0;
+                    i--;
+                    // else
+                    // {
+                    //     count=1;
+                    //     ans.add(a[i]);
+                    // }
                 }
           
         }
