@@ -12,6 +12,7 @@ class Solution {
                 if(count<2)
                 {
                     ans.add(a[i]);
+                    
                     if(a[i]==a[i-1])
                         count++;
                     else
@@ -25,12 +26,8 @@ class Solution {
                     }
                     count=0;
                     i--;
-                    // else
-                    // {
-                    //     count=1;
-                    //     ans.add(a[i]);
-                    // }
                 }
+                //a[i]=ans.get(i);
           
         }
         for(i=0;i<ans.size();i++)
