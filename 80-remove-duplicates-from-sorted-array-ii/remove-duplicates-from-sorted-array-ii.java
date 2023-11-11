@@ -9,29 +9,24 @@ class Solution {
         ans.add(a[0]);
         for(i=1;i<n;i++)
         {
-            if(a[i]==a[i-1])
-            {
                 if(count<2)
                 {
                     ans.add(a[i]);
-                    count++;
+                    if(a[i]==a[i-1])
+                        count++;
+                    else
+                        count=1;
                 }
                 else
                 {
-                    while(i<n && a[i]==a[i-1])
+                    if(a[i]==a[i-1]);
+                    else
                     {
-                        i++;
+                        count=1;
+                        ans.add(a[i]);
                     }
-                    i--;
-                    System.out.println(a[i]);
-                    count=0;
                 }
-            }
-            else
-            {
-                count=1;
-                ans.add(a[i]);
-            }
+          
         }
         for(i=0;i<ans.size();i++)
         {
