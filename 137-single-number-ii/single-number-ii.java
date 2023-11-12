@@ -1,30 +1,18 @@
 class Solution {
     public int singleNumber(int[] nums) {
+        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
 
-        HashMap<Integer,Integer> map= new HashMap<>();
-        for(int i=0;i<nums.length;i++)
+        for(int num : nums)
         {
-            if(map.containsKey(nums[i]))
-            {
-                int val=map.get(nums[i]);
-                val++;
-                map.put(nums[i],val);
-            }
-            else
-            {
-                map.put(nums[i],1);
-            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
-    for (Map.Entry<Integer, Integer> entry : map.entrySet()) 
-    {
-    Integer key = entry.getKey();
-    Integer value = entry.getValue();
-    if(value==1)
-    {
-        return key;
-    }
-    }
-    return -1;
-        
+
+        for(int num : nums)
+        {
+            if(map.get(num) != 3)
+                return num;
+        }
+
+        return 0;
     }
 }
