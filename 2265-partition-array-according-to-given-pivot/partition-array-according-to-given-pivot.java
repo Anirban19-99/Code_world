@@ -3,28 +3,28 @@ class Solution {
 
 			int[] ans=new int[a.length];
 			int index=0;
-			for(int i=0;i<a.length;i++)
+			for(int x : a)
 			{
-				if(a[i]<pivot)
+				if(x<pivot)
 				{
-					ans[index]=a[i];
+					ans[index]=x;
 					index++;
 				}
 			}
 
-			for(int i=0;i<a.length;i++)
+			for(int x : a)
 			{
-				if(a[i]==pivot)
+				if(x==pivot)
 				{
-					ans[index]=a[i];
+					ans[index]=x;
 					index++;
 				}
 			}
-			for(int i=0;i<a.length;i++)
+			for(int x:a)
 			{
-				if(a[i]>pivot)
+				if(x>pivot)
 				{
-					ans[index]=a[i];
+					ans[index]=x;
 					index++;
 				}
 			}
