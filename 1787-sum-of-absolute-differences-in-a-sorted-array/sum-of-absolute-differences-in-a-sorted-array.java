@@ -19,12 +19,10 @@ class Solution {
                 first_half_sum=0;
             int second_half_sum=(sum_map.get(n-1)-sum_map.get(i))-((n-1-i)*a[i]);
             int res_ans=first_half_sum+second_half_sum;
-            ans[i]=res_ans;
-            
-
+            a[i]=res_ans;
         }
 
-        return ans;
+        return a;
 
         
     }
