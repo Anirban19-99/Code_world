@@ -20,7 +20,7 @@ class Solution {
             int second_half_sum=(sum_map.get(n-1)-sum_map.get(i))-((n-1-i)*a[i]);
             int res_ans=first_half_sum+second_half_sum;
             ans[i]=res_ans;
-            System.out.println("for"+a[i]+"diff are"+first_half_sum+second_half_sum);
+            
 
         }
 
