@@ -12,24 +12,16 @@ class Solution {
 
         for(int i=0;i<n;i++)
         { 
-        int first_half_sum;
-        if(i>0)
-            first_half_sum=sum_map.get(i-1);
-        else
-            first_half_sum=0;   
-        int second_half_sum=sum_map.get(n-1)-sum_map.get(i);
+            int first_half_sum;
+            if(i>0)
+                first_half_sum=(a[i]*i)-(sum_map.get(i-1));
+            else
+                first_half_sum=0;
+            int second_half_sum=(sum_map.get(n-1)-sum_map.get(i))-((n-1-i)*a[i]);
+            int res_ans=first_half_sum+second_half_sum;
+            ans[i]=res_ans;
+            System.out.println("for"+a[i]+"diff are"+first_half_sum+second_half_sum);
 
-        int diff_of_second_half=second_half_sum-((n-1-i)*(a[i]));
-        int diff_of_first_half=first_half_sum-(i*a[i]);
-        if(diff_of_first_half<0)
-            diff_of_first_half=0-diff_of_first_half;
-        if(diff_of_second_half<0)
-            diff_of_second_half=0-diff_of_second_half;
-        int final_ans=diff_of_second_half+diff_of_first_half;
-        if(final_ans<0)
-            final_ans=0-final_ans;
-        ans[i]=final_ans;
-        System.out.println("for"+a[i]+"diff are"+diff_of_first_half+diff_of_second_half);
         }
 
         return ans;
