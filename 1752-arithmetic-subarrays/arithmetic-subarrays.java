@@ -19,13 +19,10 @@ class Solution {
             int check=0;
             for(int m=0;m<ar.length-1;m++)
             {
-                if(ar[m+1]-ar[m]==diff)
-                {
-
-                }
+                if(ar[m+1]-ar[m]==diff);
                 else
                 {
-                    check++;
+                    check=-1;
                     break;
                 }
             }
