@@ -14,8 +14,9 @@
  * }
  */
 class Solution {
-    int max=Integer.MIN_VALUE;
+    static int max=Integer.MIN_VALUE;
     public int diameterOfBinaryTree(TreeNode root) {
+        max=Integer.MIN_VALUE;
         height(root);
         return max;
     }
@@ -27,7 +28,9 @@ class Solution {
         int right_height=height(root.right);
         int total_distance=left_height+right_height;
         if(total_distance>max)
+        {   
             max=total_distance; 
+        }
         return 1+Math.max(left_height,right_height);
 
     }
