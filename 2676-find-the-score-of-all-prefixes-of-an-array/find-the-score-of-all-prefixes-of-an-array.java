@@ -10,7 +10,6 @@ class Solution {
             {
                 max=a[i];
             }
-           // map.put(i,max);
             sum=sum+a[i]+max;
             final_ans[i]=sum;
         }
