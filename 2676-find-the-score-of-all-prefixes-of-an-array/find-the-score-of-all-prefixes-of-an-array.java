@@ -1,7 +1,5 @@
 class Solution {
     public long[] findPrefixScore(int[] a) {
-        
-        //long[] ans= new long[a.length];
         long[] final_ans= new long[a.length];
         int max=Integer.MIN_VALUE;
         Map<Integer,Integer> map=new HashMap<>();
@@ -12,10 +10,8 @@ class Solution {
             {
                 max=a[i];
             }
-            map.put(i,max);
-            // ans[i]=a[i]+(map.get(i));
-            // sum=sum+ans[i];
-            sum=sum+a[i]+(map.get(i));
+           // map.put(i,max);
+            sum=sum+a[i]+max;
             final_ans[i]=sum;
         }
 
