@@ -1,10 +1,8 @@
 class Solution {
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        int n=Math.max(word1.length,word2.length);
-        
         String ans1= new String();
         String ans2= new String();
-        for(int i=0;i<n;i++)
+        for(int i=0;i<Math.max(word1.length,word2.length);i++)
         {
             if(i<word1.length)
                 ans1=ans1+word1[i];
