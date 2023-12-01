@@ -1,23 +1,28 @@
 class Solution {
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        StringBuilder sb= new StringBuilder();
-        StringBuilder sb1= new StringBuilder();
         int n=Math.max(word1.length,word2.length);
+        
+        String ans1= new String();
+        String ans2= new String();
         for(int i=0;i<n;i++)
         {
-            if(i<word1.length){
-            StringBuilder index= new StringBuilder(word1[i]);
-            sb.append(index);
-            }
-            if(i<word2.length){
-            StringBuilder index1= new StringBuilder(word2[i]);
-            sb1.append(index1);
-            }
+            if(i<word1.length)
+                ans1=ans1+word1[i];
+            if(i<word2.length)
+                ans2=ans2+word2[i];
         }
-        System.out.print(sb+","+sb1);
-        if((sb.toString()).equals(sb1.toString()))
+
+        
+        if((ans1.equals(ans2)))
             return true;
         else
             return false;
+
+
+
+        // if((sb.toString()).equals(sb1.toString()))
+        //     return true;
+        // else
+        //     return false;
     }
 }
