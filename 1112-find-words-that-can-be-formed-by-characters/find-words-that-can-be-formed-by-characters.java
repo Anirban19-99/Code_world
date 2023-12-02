@@ -3,6 +3,7 @@ class Solution {
         int char_freq[]=new int[26];
         String ans=new String();
         int final_count=0;
+        int length=0;
         System.out.print(char_freq[1]);
         for(int i=0;i<chars.length();i++)
         {
@@ -23,12 +24,12 @@ class Solution {
                     break;
                 }
             }
-            
             if(red_flag==0)
-                ans=ans+a[i];
+            {
+                length=length+a[i].length();
+            }
             
-
         }
-        return ans.length();
+        return length;
     }
 }
