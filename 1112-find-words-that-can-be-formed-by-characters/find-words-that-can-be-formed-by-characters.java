@@ -18,8 +18,10 @@ class Solution {
             {
                 int index=a[i].charAt(j)-'a';
                 check_freq[index]=check_freq[index]-1;
-                if(check_freq[index]<0)
+                if(check_freq[index]<0){
                     red_flag=-1;
+                    break;
+                }
             }
             
             if(red_flag==0)
