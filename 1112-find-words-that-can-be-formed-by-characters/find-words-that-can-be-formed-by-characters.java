@@ -13,23 +13,18 @@ class Solution {
         {
             
             int[] check_freq = Arrays.copyOf(char_freq, char_freq.length);
+            int red_flag=0;
             for(int j=0;j<a[i].length();j++)
             {
                 int index=a[i].charAt(j)-'a';
                 check_freq[index]=check_freq[index]-1;
+                if(check_freq[index]<0)
+                    red_flag=-1;
             }
-            int count=0;
-            for(int j=0;j<26;j++)
-            {
-                if(check_freq[j]>=0);
-                else
-                    count=-1;
-            }
-            if(count==0)
-            {
-                System.out.println(a[i]);
+            
+            if(red_flag==0)
                 ans=ans+a[i];
-            }
+            
 
         }
         return ans.length();
