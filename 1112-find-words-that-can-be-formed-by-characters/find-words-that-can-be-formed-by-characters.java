@@ -7,7 +7,8 @@ class Solution {
         System.out.print(char_freq[1]);
         for(int i=0;i<chars.length();i++)
         {
-            char_freq[chars.charAt(i)-'a']=char_freq[chars.charAt(i)-'a']+1;
+            int index=chars.charAt(i)-'a';
+            char_freq[index]=char_freq[index]+1;
         }
         for(int i=0;i<a.length;i++)
         {
@@ -16,8 +17,9 @@ class Solution {
             int red_flag=0;
             for(int j=0;j<a[i].length();j++)
             {
-                check_freq[a[i].charAt(j)-'a']=check_freq[a[i].charAt(j)-'a']-1;
-                if(check_freq[a[i].charAt(j)-'a']<0){
+                int index=a[i].charAt(j)-'a';
+                check_freq[index]=check_freq[index]-1;
+                if(check_freq[index]<0){
                     red_flag=-1;
                     break;
                 }
