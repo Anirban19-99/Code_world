@@ -6,8 +6,7 @@ class Solution {
         int last_dig=0;
         for(int i=0;i<n-2;i++)
         {
-            if((int)(a.charAt(i))<last_dig)
-                continue;
+
             if(a.charAt(i)==a.charAt(i+1) && a.charAt(i+1)==a.charAt(i+2))
             {
                 StringBuilder sb= new StringBuilder();
