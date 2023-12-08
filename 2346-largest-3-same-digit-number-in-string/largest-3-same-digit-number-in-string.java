@@ -3,13 +3,16 @@ class Solution {
         
         int final_num=Integer.MIN_VALUE;
         int n=a.length();
+        int last_dig=0;
         for(int i=0;i<n-2;i++)
         {
-            //if(Integer.parseInt(a.charAt(i))<)
+            if((int)(a.charAt(i))<last_dig)
+                continue;
             if(a.charAt(i)==a.charAt(i+1) && a.charAt(i+1)==a.charAt(i+2))
             {
                 StringBuilder sb= new StringBuilder();
                 sb.append(a.charAt(i));
+                last_dig=(int)(a.charAt(i));
                 sb.append(a.charAt(i+1));
                 sb.append(a.charAt(i+2));
                 int num=Integer.parseInt(sb.toString());
