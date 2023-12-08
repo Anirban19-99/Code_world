@@ -5,6 +5,7 @@ class Solution {
         int n=a.length();
         for(int i=0;i<n-2;i++)
         {
+            //if(Integer.parseInt(a.charAt(i))<)
             if(a.charAt(i)==a.charAt(i+1) && a.charAt(i+1)==a.charAt(i+2))
             {
                 StringBuilder sb= new StringBuilder();
@@ -16,6 +17,7 @@ class Solution {
                 {
                     final_num=num;
                 }
+                i=i+2;
             }
         }
         if(final_num==Integer.MIN_VALUE)
