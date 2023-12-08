@@ -1,27 +1,22 @@
 class Solution {
     public int totalMoney(int n) {
 
-        int sum=0;
-        int prev_monday=1;
-        int days=1;
+        int days=n;
         int val=0;
-        while(days!=n+1)
+        int k=0;
+        int sum=0;
+        while(n>0)
         {
-            System.out.println(days);
-            if(days%7==1)
-            {
-                sum=sum+prev_monday;
-                prev_monday++;
-                val=prev_monday;
-            }
+            if(n<=7)
+                sum=sum+(n*(n+1)/2)+(n*val);
             else
             {
-                sum=sum+val;
-                val++;
+                k=7;
+                sum=sum+(k*(k+1)/2)+(k*val);
             }
-            days++;
+            n=n-7;
+            val++;
         }
-
         return sum;
         
     }
