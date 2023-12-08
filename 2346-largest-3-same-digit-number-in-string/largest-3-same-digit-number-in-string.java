@@ -8,7 +8,6 @@ class Solution {
         {
             if((int)(a.charAt(i))<last_dig)
                 continue;
-            System.out.println(a.charAt(i));
             if(a.charAt(i)==a.charAt(i+1) && a.charAt(i+1)==a.charAt(i+2))
             {
                 StringBuilder sb= new StringBuilder();
