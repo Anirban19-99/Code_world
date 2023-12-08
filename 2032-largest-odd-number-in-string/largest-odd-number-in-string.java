@@ -10,14 +10,11 @@ class Solution {
                     break;
             }
         }
-        StringBuilder ans=new StringBuilder();
+        
         if(index==-1)
-            return ans.toString();
-        for(int i=0;i<=index;i++)
-        {
-            ans.append(a.charAt(i));
-        }
-        return ans.toString();
+            return "";
+        String ans = a.substring(0, index+1);
+        return ans;
         
     }
 }
