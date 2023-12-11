@@ -1,9 +1,9 @@
 class Solution {
     public List<Integer> findWordsContaining(String[] words, char x) {
-        List<Integer> result = new ArrayList<>();
+          List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < words.length; i++) {
-            if (containsCharacter(words[i], x)) {
+            if (words[i].indexOf(x) != -1) {
                 result.add(i);
             }
         }
@@ -11,12 +11,4 @@ class Solution {
         return result;
     }
 
-    private boolean containsCharacter(String word, char x) {
-        for (char c : word.toCharArray()) {
-            if (c == x) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
