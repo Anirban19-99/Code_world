@@ -4,7 +4,7 @@ class Solution {
         String str= "" +x;
         for(int i=0;i<a.length;i++)
         {
-            if(a[i].contains(str))
+            if(a[i].contains(""+x))
                 ans.add(i);
         }
         return ans;
