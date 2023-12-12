@@ -7,20 +7,16 @@ class Solution {
       {
           if(a[i]>max1)
           {
+              max2=max1;
               max1=a[i];
-              index1=i;
           }
-      }
-
-       for(int i=0;i<a.length;i++)
-      {
-          if(i==index1)
-            continue;
-          if(a[i]>max2 && a[i]<=max1)
+          else if(a[i]>max2)
           {
               max2=a[i];
           }
       }
+
+       
 
       return (max1-1)*(max2-1); 
     }
