@@ -1,10 +1,5 @@
 class Solution {
     public int[][] onesMinusZeros(int[][] a) {
-        // List<Integer> one_col=new ArrayList<>();
-        // List<Integer> zero_row=new ArrayList<>();
-        // List<Integer> one_col=new ArrayList<>();
-        // List<Integer> zero_row=new ArrayList<>();
-        int[][] twoDArray = new int[3][4];
         int row=a.length;
         int col=a[0].length;
         int[] one_col = new int[col];
@@ -28,26 +23,7 @@ class Solution {
                 }
             }
         }
-        // for(int i : one_col)
-        // {
-        //     System.out.print(i+",");
-        // }
-        // System.out.println();
-        // for(int i : one_row)
-        // {
-        //     System.out.print(i+",");
-        // }
-        // System.out.println();
-        // for(int i : zero_col)
-        // {
-        //     System.out.print(i+",");
-        // }
-        // System.out.println();
-        // for(int i : zero_row)
-        // {
-        //     System.out.print(i+",");
-        // }
-        // System.out.println();
+       
         int[][] ans = new int[row][col];
         for(int i=0;i<row;i++)
         {
