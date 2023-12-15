@@ -2,7 +2,7 @@ class Solution {
     public boolean checkRecord(String s) {
         int a_count=0;
         String check="LLL";
-        if(s.contains(check))
+        if(s.contains("LLL"))
             return false;
         for(int i=0;i<s.length();i++)
         {
