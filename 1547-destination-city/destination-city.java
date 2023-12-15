@@ -18,8 +18,6 @@ class Solution {
             if(!ans.containsKey(paths.get(i).get(1)))
                 return paths.get(i).get(1);
         }
-
-        int length1=paths.size();
-        return paths.get(paths.size()-1).get(paths.get(length1-1).size()-1);
+        return paths.get(paths.size()-1).get(paths.get(paths.size()-1).size()-1);
     }
 }
