@@ -1,20 +1,26 @@
 class Solution {
     public boolean checkRecord(String s) {
-        int a_count=0;
-        String check="LLL";
-        if(s.contains("LLL"))
-            return false;
-        for(int i=0;i<s.length();i++)
-        {
-            if(s.charAt(i)=='A')
-                a_count++;
-            if(a_count>=2)
-                return false;
-            
-        }
-        if(a_count<2)
-            return true;
+        int countAbs = 0;
+        int countLeave = 0;
 
-        return false;
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i) == 'A'){
+                countAbs++;
+                if(countAbs >= 2){
+                    return false;
+                }
+                countLeave = 0;
+            }
+            else if(s.charAt(i) == 'L'){
+                countLeave++;
+                if(countLeave >= 3){
+                    return false;
+                }
+            }
+            else{
+                countLeave = 0;
+            }
+        }
+        return true;
     }
 }
