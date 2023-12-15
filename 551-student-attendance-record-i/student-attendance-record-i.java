@@ -8,6 +8,9 @@ class Solution {
         {
             if(s.charAt(i)=='A')
                 a_count++;
+            if(a_count>=2)
+                return false;
+            
         }
         if(a_count<2)
             return true;
