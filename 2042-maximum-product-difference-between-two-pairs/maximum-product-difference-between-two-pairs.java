@@ -5,8 +5,6 @@ class Solution {
         int max2=Integer.MIN_VALUE;
         int min1=Integer.MAX_VALUE;
         int min2=Integer.MAX_VALUE;
-        int max_index=0;
-        int min_index=0;
         int n=a.length;
         for(int i=0;i<n;i++)
         {
@@ -31,8 +29,6 @@ class Solution {
             }
             
         }
-        System.out.println(max1+","+max2);
-        System.out.println(min1+","+min2);
 
         return max1*max2-min1*min2;
         
