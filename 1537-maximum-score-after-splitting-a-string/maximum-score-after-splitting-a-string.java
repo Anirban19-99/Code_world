@@ -21,9 +21,7 @@ class Solution {
         for(int i=1;i<s.length();i++)
         {
             int n=s.charAt(i)-'0';
-            System.out.println(prev_zero+","+prev_one);
-            int rem_sum=total_sum-prev_one;
-            int sum=prev_zero+rem_sum;
+            int sum=prev_zero+total_sum-prev_one;
             if(sum>final_sum)
                 final_sum=sum;
             if(n==1)
