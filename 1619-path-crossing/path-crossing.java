@@ -33,7 +33,6 @@ class Solution {
             else
                 points.add(temp);
         }
-        System.out.println(points);
         return false;
         
     }
