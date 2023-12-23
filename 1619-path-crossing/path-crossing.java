@@ -21,7 +21,7 @@ class Solution {
             {
                 index1++;
             }
-            else if(path.charAt(i)=='W')
+            else 
             {
                 index1--;
             }
