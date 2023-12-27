@@ -1,21 +1,37 @@
 class Solution {
     public int minCost(String colors, int[] neededTime) {
-        int totalTime = 0;
-        int i = 0, j = 0;
+        int time=0;
+        for(int i=0;i<colors.length()-1;i++)
+        {
+            if(colors.charAt(i)==colors.charAt(i+1))
+            {
+                int starting_index=i;
+                int j=i;
+                while(colors.charAt(j)==colors.charAt(i))
+                {
+                    if(j==colors.length()-1)
+                        break;
+                    j++;
+                }
+                if(colors.charAt(i)!=colors.charAt(j))
+                {
+                    j--;
+                }
+                int max=0;
+                for(int k=starting_index;k<=j;k++)
+                {
+                    if(neededTime[k]>max)
+                    {
+                        max=neededTime[k];
+                    }
+                    time=time+neededTime[k];
+                }
+                time=time-max;
 
-        while (i < neededTime.length && j < neededTime.length) {
-            int currTotal = 0, currMax = 0;
-
-            while (j < neededTime.length && colors.charAt(i) == colors.charAt(j)) {
-                currTotal += neededTime[j];
-                currMax = Math.max(currMax, neededTime[j]);
-                j++;
+                i=j;
             }
-
-            totalTime += currTotal - currMax;
-            i = j;
         }
-        return totalTime;
+
+        return time;
     }
 }
-
