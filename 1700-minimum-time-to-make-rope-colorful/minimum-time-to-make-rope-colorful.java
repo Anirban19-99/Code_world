@@ -7,27 +7,26 @@ class Solution {
             {
                 int starting_index=i;
                 int j=i;
+                int max=0;
+                int second_max=0;
                 while(colors.charAt(j)==colors.charAt(i))
                 {
+                    time=time+neededTime[j];
+                    if(max<neededTime[j])
+                    {
+                        second_max=max;
+                        max=neededTime[j];
+                    }       
                     if(j==colors.length()-1)
                         break;
-                    j++;
-                }
-                if(colors.charAt(i)!=colors.charAt(j))
-                {
-                    j--;
-                }
-                int max=0;
-                for(int k=starting_index;k<=j;k++)
-                {
-                    if(neededTime[k]>max)
+                    if(colors.charAt(j)==colors.charAt(j+1))
                     {
-                        max=neededTime[k];
+                        j++;
                     }
-                    time=time+neededTime[k];
+                    else
+                        break;
                 }
                 time=time-max;
-
                 i=j;
             }
         }
