@@ -27,7 +27,6 @@ class Solution {
                     time=time+neededTime[k];
                 }
                 time=time-max;
-
                 i=j;
             }
         }
