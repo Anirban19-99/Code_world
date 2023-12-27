@@ -5,29 +5,25 @@ class Solution {
         {
             if(colors.charAt(i)==colors.charAt(i+1))
             {
-                int starting_index=i;
-                int j=i;
-                while(colors.charAt(j)==colors.charAt(i))
+               int j=i;
+               while(colors.charAt(i)==colors.charAt(j))
                 {
                     if(j==colors.length()-1)
                         break;
                     j++;
                 }
                 if(colors.charAt(i)!=colors.charAt(j))
-                {
                     j--;
-                }
                 int max=0;
-                for(int k=starting_index;k<=j;k++)
+                for(int k=i;k<=j;k++)
                 {
-                    if(neededTime[k]>max)
-                    {
-                        max=neededTime[k];
-                    }
                     time=time+neededTime[k];
+                    if(max<neededTime[k])
+                        max=neededTime[k];
                 }
-                time=time-max;
+                time-=max;
                 i=j;
+                
             }
         }
 
