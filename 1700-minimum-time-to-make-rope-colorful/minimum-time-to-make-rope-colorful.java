@@ -22,7 +22,6 @@ class Solution {
            }
            if(colors.charAt(i)!=colors.charAt(i-1) || i==colors.length()-1)
            {
-                System.out.println(time+","+max);
                 time=time-max;
                 max=0;
                 starting_index=-1;
