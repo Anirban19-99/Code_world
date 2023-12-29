@@ -2,9 +2,9 @@ class Solution {
     public int[] sortArray(int[] a) {
         if(a.length<=1)
             return a;
-        int start=0;
-        int end=a.length-1;
-        merge_sort(a,start,end);
+        Arrays.sort(a);
+        
+        //merge_sort(a,start,end);
         return a;
     }
 
