@@ -5,28 +5,27 @@ class Solution {
         if(g.length==0 || s.length==0)
             return 0;
         int count=0;
-         System.out.println("ok");
-            int i=0;//for g
-            int j=0;//for s
+        int i=0;//for g
+        int j=0;//for s
 
-            while(g[0]>s[j])
+        while(g[0]>s[j])
+        {
+            j++;
+        }
+        while(j<s.length && i<g.length)
+        {
+            if(s[j]>=g[i])
             {
-                j++;
-            }
-            while(j<s.length && i<g.length)
-            {
-               if(s[j]>=g[i])
-               {
                    j++;
                    i++;
                    count++;
-               }
-               else
-               {
-                   j++;
-               }
-                
             }
+            else
+            {
+                   j++;
+            }
+                
+        }
         return count;
         
     }
