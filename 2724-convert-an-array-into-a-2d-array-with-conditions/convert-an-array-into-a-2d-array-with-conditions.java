@@ -1,44 +1,32 @@
+
+
 class Solution {
-    public List<List<Integer>> findMatrix(int[] a) {
-        List<List<Integer>> ans= new ArrayList<>();
-        Map<Integer,Integer> map=new HashMap<>();
-        for(int i=0;i<a.length;i++)
-        {
-            if(map.containsKey(a[i]))
-            {
-                map.put(a[i],map.get(a[i])+1);
-            }
-            else
-            {
-                map.put(a[i],1);
-            }
+    public List<List<Integer>> findMatrix(int[] v) {
+        Map<Integer, Integer> um = new HashMap<>();
+        for (int i : v) {
+            um.put(i, um.getOrDefault(i, 0) + 1);
         }
-
-
-        while(map.size()!=0)
-        {
-            List<Integer> temp= new ArrayList<>();
-            for(int i=0;i<a.length;i++)
-            {
-                if(!temp.contains(a[i]) && map.containsKey(a[i]))
-                {
-                    temp.add(a[i]);
-                    if(map.get(a[i])==1)
-                    {
-                        map.remove(a[i]);
-                    }
-                    else
-                    {
-                        map.put(a[i],map.get(a[i])-1);
-                    }
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        while (!um.isEmpty()) {
+            List<Integer> temp = new ArrayList<>();
+            List<Integer> toErase = new ArrayList<>();
+            for (Map.Entry<Integer, Integer> entry : um.entrySet()) {
+                int f = entry.getKey();
+                int s = entry.getValue();
+                temp.add(f);
+                s--;
+                if (s == 0) {
+                    toErase.add(f);
                 }
-                
+                um.put(f, s);
             }
             ans.add(temp);
+            for (int i : toErase) {
+                um.remove(i);
+            }
         }
-
         return ans;
-        
-        
     }
 }
+
