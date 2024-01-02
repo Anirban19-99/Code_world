@@ -1,46 +1,29 @@
-class Solution {
-    public List<List<Integer>> findMatrix(int[] a) {
-        List<List<Integer>> ans= new ArrayList<>();
-        Map<Integer,Integer> map=new HashMap<>();
-        for(int i=0;i<a.length;i++)
-        {
-            if(map.containsKey(a[i]))
-            {
-                map.put(a[i],map.get(a[i])+1);
-            }
-            else
-            {
-                map.put(a[i],1);
-            }
+public class Solution {
+    public List<List<Integer>> findMatrix(int[] nums) {
+        List<Integer> numList = new ArrayList<>();
+        for (int num : nums) {
+            numList.add(num);
         }
 
+        List<List<Integer>> ans = new ArrayList<>();
+        Set<Integer> s = new HashSet<>();
 
-        while(map.size()!=0)
-        {
-            List<Integer> temp= new ArrayList<>();
-            for(int i=0;i<a.length;i++)
-            {
-                if(!temp.contains(a[i]) && map.containsKey(a[i]))
-                {
-                    temp.add(a[i]);
-                    if(map.get(a[i])==1)
-                    {
-                        map.remove(a[i]);
-                        
-                    }
-                    else
-                    {
-                        map.put(a[i],map.get(a[i])-1);
-                    }
-                }       
+        while (!numList.isEmpty()) {
+            List<Integer> uniqueRow = new ArrayList<>();
+
+            for (int i = 0; i < numList.size(); i++) {
+                if (!s.contains(numList.get(i))) {
+                    s.add(numList.get(i));
+                    uniqueRow.add(numList.get(i));
+                    numList.remove(i);
+                    i--;  // Adjust the index after removing an element
+                }
             }
-            ans.add(temp);
-            if(map.size()<=0)
-                return ans;
+
+            ans.add(uniqueRow);
+            s.clear();  // Clear the set for the next row
         }
 
         return ans;
-        
-        
     }
 }
