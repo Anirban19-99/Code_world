@@ -15,12 +15,10 @@ class Solution {
             }
                 
         }
-        System.out.println(map);
         int count=0;
         for(int i=0;i<list.size();i++)
         {
             int val=map.get(list.get(i));
-            System.out.println("val"+val);
             if(val%3==0)
             {
                 count=count+(val/3);
