@@ -1,6 +1,6 @@
 class Solution {
     public int minOperations(int[] a) {
-        Arrays.sort(a);
+        //Arrays.sort(a);
         List<Integer> list=new ArrayList<>();
         Map<Integer,Integer> map=new HashMap<>();
         for(int i=0;i<a.length;i++)
