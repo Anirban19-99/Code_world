@@ -9,7 +9,6 @@ class Solution {
             return;
         }
             
-
         while(a[start]==0)
         {
             start++;
@@ -25,7 +24,7 @@ class Solution {
             }
             if(start==a.length)
                     break;
-            while(a[start]==0 && start<a.length && start<end)
+            while(a[start]==0 && start<end)
             {
                 start++;
                 if(start==a.length)
@@ -54,7 +53,7 @@ class Solution {
             }
             if(start==a.length)
                     break;
-            while(a[start]==1 && start<a.length && start<end)
+            while(a[start]==1 && start<end)
             {
                 start++;
                 if(start==a.length)
