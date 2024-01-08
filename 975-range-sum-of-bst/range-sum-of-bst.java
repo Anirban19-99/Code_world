@@ -27,8 +27,7 @@ class Solution {
         {
             if(root.val>=low && root.val<=high)
             {
-                sum=sum+root.val;
-                System.out.println(root.val);           
+                sum=sum+root.val;           
             }
              travers(root.left,low,high);
              travers(root.right,low,high);
