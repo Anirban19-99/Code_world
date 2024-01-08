@@ -31,8 +31,6 @@ class Solution {
             }
              travers(root.left,low,high);
              travers(root.right,low,high);
-        }
-
-       
+        } 
     }
 }
