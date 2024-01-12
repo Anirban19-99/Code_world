@@ -15,7 +15,7 @@ class Solution {
                     start=k;
                 int length=end-start+1;
                 map.put(c,end);
-                System.out.println(length+":"+start+":"+end);
+                //System.out.println(length+":"+start+":"+end);
                 if(length>max_length)
                     max_length=length;
 
