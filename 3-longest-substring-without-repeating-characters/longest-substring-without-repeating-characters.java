@@ -1,51 +1,36 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        Map<Character,Integer> map = new HashMap<>();
-        int n=s.length();
-        if(n==0)
+        Map<Character,Integer> map=new HashMap<>();
+        int start=0;
+        int end=0;
+        int max_length=0;
+        while(end<s.length())
         {
-            return 0;
-        }
-        if(n==1)
-        {
-            return 1;
-        }
-        int length=0;
-        int max_len=0;
-        int start=0,end;
-        for(int i=0;i<n;i++)
-        {
-            if(map.containsKey(s.charAt(i)))
+            char c=s.charAt(end);
+            if(map.containsKey(c))
             {
-               end=i-1;
-               length=end-start+1;
-               if(length>max_len)
-                    max_len=length;
-               int start1=map.get(s.charAt(i))+1;
-               if(start1>start)
-                    start=start1;
-
-               map.put(s.charAt(i),i);
-              // i--;
+                int index=map.get(c);
+                int k=index+1;
+                if (k>start )
+                    start=k;
+                int length=end-start+1;
+                map.put(c,end);
+                System.out.println(length+":"+start+":"+end);
+                if(length>max_length)
+                    max_length=length;
 
             }
             else
             {
-                map.put(s.charAt(i),i);
-                
+                map.put(c,end);
+                int length=end-start+1;
+                if(length>max_length)
+                    max_length=length;
             }
-
-            if(i==(n-1))
-            {
-                end=i;
-                length=end-start+1;
-                System.out.println(start+","+end+","+length);
-                if(length>max_len)
-                    max_len=length; 
-
-            }
+            end++;
         }
 
-        return max_len;
+        return max_length;
+        
     }
 }
