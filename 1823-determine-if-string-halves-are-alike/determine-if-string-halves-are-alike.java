@@ -1,5 +1,7 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
+        if(s.length()<2)
+            return false;
         int count1=calculate_vowel(s,0,(s.length()/2)-1);
         int count2=calculate_vowel(s,(s.length()/2),s.length()-1);
         if(count1==count2)
