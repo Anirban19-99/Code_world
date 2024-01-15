@@ -8,8 +8,7 @@ class Solution {
             return false;
         while(i<s.length() && j<t.length())
         {
-            if(i==s.length()-1 && (t.charAt(j)==s.charAt(i)))
-                return true;
+            
             if(t.charAt(j)==s.charAt(i))
             {
                 i++;
@@ -19,6 +18,9 @@ class Solution {
             {
                 j++;
             }
+
+            if(i==s.length())
+                return true;
             
         }
 
