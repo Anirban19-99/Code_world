@@ -4,7 +4,6 @@ class Solution {
         List<Integer> ans2=new ArrayList<>();
         List<List<Integer>> final_ans=new ArrayList<>();
         Map<Integer,Integer> map=new HashMap<>();
-        Map<Integer,Integer> map2=new HashMap<>();
         for(int i=0;i<matches.length;i++)
         {  
             map.put(matches[i][0],0);
@@ -30,18 +29,7 @@ class Solution {
                 ans1.add(entry.getKey());
             }
         }
-
-        // for (Map.Entry<Integer, Integer> entry : map2.entrySet()) {
-        //     int value=entry.getValue();
-
-        //     if(value==1)
-        //         ans2.add(entry.getKey());
-            
-        // }
-       
-
-
-        Collections.sort(ans1);
+       Collections.sort(ans1);
         Collections.sort(ans2);
         final_ans.add(ans1);
         final_ans.add(ans2);
