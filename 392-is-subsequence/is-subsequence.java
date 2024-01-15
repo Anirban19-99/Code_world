@@ -4,8 +4,8 @@ class Solution {
         int j=0;
         if(s.length()==0)
             return true;
-        if(t.length()==0 || t.length()<s.length())
-            return false;
+        // if(t.length()==0 || t.length()<s.length())
+        //     return false;
         while(i<s.length() && j<t.length())
         {
             
