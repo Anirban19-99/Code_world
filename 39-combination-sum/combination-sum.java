@@ -19,7 +19,6 @@ class Solution {
             {
                 List<Integer> temp_ans= new ArrayList<>(ans);
                 final_ans.add(temp_ans);
-                System.out.println();
                 
             }
             return 0;
