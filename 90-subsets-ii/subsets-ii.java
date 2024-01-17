@@ -1,6 +1,7 @@
 //subsetsWithDup
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         int n=nums.length;
         List<Integer> cur= new ArrayList<>();
@@ -14,7 +15,7 @@ class Solution {
         if(cur_index==n)
         {
             List<Integer> temp_ans= new ArrayList<>(cur);
-            Collections.sort(temp_ans);
+            //Collections.sort(temp_ans);
             if(!ans.contains(temp_ans))
             {
                ans.add(temp_ans);
