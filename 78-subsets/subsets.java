@@ -1,27 +1,19 @@
+import java.util.*;
+
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
-        int n=nums.length;
-        List<Integer> cur= new ArrayList<>();
-        int cur_index=0;
-        generate_all(nums,cur_index,n,cur,ans);
-        return ans;
-        
+        Arrays.sort(nums);
+        List<List<Integer>> subsets = new ArrayList<>();
+        backtrack(nums, 0, new ArrayList<>(), subsets);
+        return subsets;
     }
-    static int generate_all(int[] a, int cur_index, int n,List<Integer> cur,List<List<Integer>> ans )
-    {
-        if(cur_index==n)
-        {
-            System.out.println(cur);
-            List<Integer> temp_ans= new ArrayList<>(cur);
-            ans.add(temp_ans);
-            return 0;
-        }
-        cur.add(a[cur_index]);
-        generate_all(a,cur_index+1,n,cur,ans);
-        cur.remove(cur.size()-1);
-        generate_all(a,cur_index+1,n,cur,ans);
-        return 1;
 
+    private void backtrack(int[] nums, int start, List<Integer> path, List<List<Integer>> subsets) {
+        subsets.add(new ArrayList<>(path));
+        for (int i = start; i < nums.length; i++) {
+            path.add(nums[i]);
+            backtrack(nums, i + 1, path, subsets);
+            path.remove(path.size() - 1);
+        }
     }
 }
