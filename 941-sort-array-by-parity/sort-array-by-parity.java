@@ -10,7 +10,9 @@ class Solution {
             if(i%2==0)
                 ans[k++]=i;
         }
-         
+        
+        if(k==nums.length)
+            return nums;
         for(int i : nums)
         {
             if(i%2!=0)
