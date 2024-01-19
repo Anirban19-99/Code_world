@@ -5,23 +5,18 @@ class Solution {
             return nums;
         int[] ans= new int[nums.length];
         int k=0;
-        int count=0;
         for(int i: nums)
-        {
-            if(i%2==0){
-                count++;
-            }
-        }
-        
-        for(int i : nums)
         {
             if(i%2==0)
                 ans[k++]=i;
-            else
-            {
-                ans[count++]=i;
-            }
-
+        }
+        
+        if(k==nums.length)
+            return nums;
+        for(int i : nums)
+        {
+            if(i%2!=0)
+                ans[k++]=i;
         }
 
         return ans;
