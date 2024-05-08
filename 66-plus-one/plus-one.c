@@ -2,16 +2,14 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int* plusOne(int* array, int size, int* returnSize) {
-    if(array[size-1]==9)
-    {
-        int all_9=1;
+        int all_9=1; // to check all digits 9 or not
+        int *ar=(int *)malloc(sizeof(int)*(size));
         *returnSize=(size);
-        int *a=(int *)malloc(sizeof(int)*(size));
         int i;
         for(i=size-1;i>=0;i--)
         {
-            a[i]=array[i];
-            if(a[i]<9)
+            ar[i]=array[i];
+            if(ar[i]<9)
                 all_9=0;
         }
         if(all_9==1)
@@ -25,26 +23,18 @@ int* plusOne(int* array, int size, int* returnSize) {
             }
             return ar;
         }
-        for(i=size-1;i>=0;i--)
+        else
         {
-            if(array[i]==9)
-                a[i]=0;
-            else
+            for(int i=size-1;i>=0;i--)
             {
-                a[i]=array[i]+1;
-                break;
+                if(ar[i]<9)
+                {
+                    ar[i]=ar[i]+1;
+                    return ar;
+                }
+                ar[i]=0;
             }
+            return ar;
         }
-        return a;
-    }
-    else
-    {
-        array[size-1]=array[size-1]+1;
-        printf("%d",array[size-1]);
-        *returnSize=size;
-        return array;
-        
-    }
-   
-    
+
 }
